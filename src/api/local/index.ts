@@ -7,7 +7,7 @@ export async function listProductsLocal(
 ): Promise<Page<ProductListItem>> {
     const urlSearchParams = new URLSearchParams();
     Object.entries(params)
-        .filter(([_, value]) => value !== undefined)
+        .filter((entry) => entry[1] !== undefined)
         .forEach(([key, value]) => {
             if (typeof value === 'number') {
                 urlSearchParams.set(key, value.toString());
