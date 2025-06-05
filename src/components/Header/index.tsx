@@ -14,7 +14,7 @@ const Header = () => {
         <HeaderContainer as="header" role="banner">
             <Flexbox as="nav" aria-label="Main navigation">
                 <Link href="/" aria-label="Navigate to home page">
-                    <Image src="/mbst.svg" alt="Logo" width={74} height={24} />
+                    <Logo src="/mbst.svg" alt="Logo" width={74} height={24} />
                 </Link>
                 <Cart href="/cart" aria-label="Navigate to shopping cart">
                     <CarIcon filled={totalItems > 0} />
@@ -31,10 +31,16 @@ const HeaderContainer = styled(Container)`
     height: var(--header-height);
     padding-top: var(--spacing-4);
     padding-bottom: var(--spacing-4);
+    & > nav {
+        height: 100%;
+    }
+`;
+
+const Logo = styled(Image)`
+    display: block;
 `;
 
 const Cart = styled(Link)`
-    padding: var(--spacing-1) 0;
     font-size: ${({ theme }) => theme.typography.fontSize.base};
     display: flex;
     align-items: center;

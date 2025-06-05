@@ -19,8 +19,8 @@ describe('Container', () => {
         const node = container.firstChild;
         expect(node).toHaveStyleRule('width', '100%');
         expect(node).toHaveStyleRule('margin', '0 auto');
-        expect(node).toHaveStyleRule('padding-left', '1rem');
-        expect(node).toHaveStyleRule('padding-right', '1rem');
+        expect(node).toHaveStyleRule('padding-left', 'var(--spacing-3)');
+        expect(node).toHaveStyleRule('padding-right', 'var(--spacing-3)');
     });
 
     it('applies responsive styles based on theme breakpoints', () => {

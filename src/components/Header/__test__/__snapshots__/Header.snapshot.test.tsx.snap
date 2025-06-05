@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.c0 {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--spacing-3);
+  padding-right: var(--spacing-3);
+  max-width: 100%;
+}
+
+.c5 {
+  display: block;
+}
+
+.c1 {
+  height: var(--header-height);
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+}
+
+.c1>nav {
+  height: 100%;
+}
+
+.c3 {
+  display: block;
+}
+
+.c4 {
+  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.c6 {
+  font-size: var(--font-size-base);
+  line-height: var(--font-size-base);
+  font-weight: var(--font-weight-thin);
+  color: var(--color-text);
+  text-transform: uppercase;
+  flex-grow: 0;
+  transform: translateY(2px);
+}
+
+@media (min-width:360px) {
+  .c0 {
+    max-width: var(--container-width-xs);
+  }
+}
+
+@media (min-width:480px) {
+  .c0 {
+    max-width: var(--container-width-sm);
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: var(--container-width-md);
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    max-width: var(--container-width-lg);
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c0 {
+    max-width: var(--container-width-xl);
+  }
+}
+
+<header
+    class="c0 c1"
+    role="banner"
+  >
+    <nav
+      aria-label="Main navigation"
+      class="c2"
+    >
+      <a
+        aria-label="Navigate to home page"
+        href="/"
+      >
+        <img
+          alt="Logo"
+          class="c3"
+          height="24"
+          src="/mbst.svg"
+          width="74"
+        />
+      </a>
+      <a
+        aria-label="Navigate to shopping cart"
+        class="c4"
+        href="/cart"
+      >
+        <img
+          alt="Shopping cart"
+          class="c5"
+          height="18"
+          src="/bag.svg"
+          style="display: block;"
+          width="18"
+        />
+        <span
+          class="c6"
+        >
+          0
+        </span>
+      </a>
+    </nav>
+  </header>
+</DocumentFragment>
+`;

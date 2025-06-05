@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import CartIcon from '../CartIcon';
 import { axe } from 'jest-axe';
 
@@ -27,7 +27,9 @@ describe('CartIcon', () => {
     });
 
     it('passes accessibility checks', async () => {
-        const { container } = render(<CartIcon filled={true} />);
+        const { container } = await waitFor(() =>
+            render(<CartIcon filled={true} />),
+        );
         const results = await axe(container);
         expect(results).toHaveNoViolations();
     });

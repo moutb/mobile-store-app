@@ -25,6 +25,7 @@ beforeEach(() => {
     unobserveMock.mockClear();
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 global.IntersectionObserver = MockIntersectionObserver as any;
 
 export { observeMock, disconnectMock, unobserveMock, intersectionCallback };

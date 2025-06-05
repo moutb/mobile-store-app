@@ -8,6 +8,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "lint:fix": "next lint --fix",
         "test": "jest",
         "format": "prettier --write ."
     },
@@ -65,6 +66,8 @@
         "typescript-eslint": "^8.33.0"
     },
     "lint-staged": {
-        "*.{ts,tsx,js,jsx}": ["npm run lint --fix"]
+        "*.{ts,tsx,js,jsx}": [
+            "npm run lint --fix"
+        ]
     }
 }

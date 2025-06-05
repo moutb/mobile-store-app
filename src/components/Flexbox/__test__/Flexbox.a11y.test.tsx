@@ -1,11 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe, toHaveNoViolations } from 'jest-axe';
+import { axe } from 'jest-axe';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
 import Flexbox from '@/components/Flexbox';
-
-expect.extend(toHaveNoViolations);
 
 describe('Flexbox accessibility', () => {
     it('should have no a11y violations', async () => {

@@ -29,6 +29,7 @@ const shouldForwardProp = (prop: string) =>
     baseShouldForwardProp(prop) && !internalProps.includes(prop);
 
 const StyledFlex = styled('div').withConfig({ shouldForwardProp })<
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     FlexboxProps<any>
 >`
     display: flex;

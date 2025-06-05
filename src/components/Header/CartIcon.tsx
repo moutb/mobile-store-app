@@ -8,6 +8,7 @@ const CartIcon = ({ filled }: CartIconProps) => (
         alt="Shopping cart"
         width={filled ? 24 : 18}
         height={filled ? 24 : 18}
+        style={{ display: 'block' }}
     />
 );
 
