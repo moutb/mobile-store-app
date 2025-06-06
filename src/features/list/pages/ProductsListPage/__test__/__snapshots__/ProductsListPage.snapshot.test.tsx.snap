@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+}
+
+.c1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  position: relative;
+}
+
+.c3 {
+  flex: 1;
+  max-width: 100%;
+  font-size: var(--font-size-lg);
+  line-height: var(--font-size-lg);
+  font-weight: var(--font-weight-thin);
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+  padding-right: var(--spacing-4);
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.c3::placeholder {
+  color: var(--color-light);
+  font-weight: var(--font-weight-thin);
+}
+
+.c3:disabled {
+  opacity: 0.5;
+}
+
+.c6 {
+  padding: var(--spacing-4);
+  border: var(--product-card-border-width) solid var(--color-primary);
+  position: relative;
+  background: var(--color-background);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.c6::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--color-primary);
+  z-index: 0;
+  transition: height 0.8s cubic-bezier(0.1,1,0.8,1);
+}
+
+.c6:hover::before {
+  height: 100%;
+}
+
+.c6>* {
+  position: relative;
+  z-index: 1;
+}
+
+.c8 {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.c9 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.c7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  gap: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.c5:hover .c7 {
+  color: var(--color-white);
+}
+
+.c10 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--spacing-1);
+}
+
+.c11 {
+  grid-column: 1/-1;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-thin);
+}
+
+.c12 {
+  font-size: var(--font-size-md);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-thin);
+  line-height: var(--font-size-md);
+}
+
+.c13 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-thin);
+  line-height: var(--font-size-md);
+  align-self: end;
+  justify-self: end;
+}
+
+.c4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(344px,1fr));
+  width: 100%;
+  border-left: var(--product-card-border-width) solid var(--color-primary);
+  border-top: var(--product-card-border-width) solid var(--color-primary);
+}
+
+.c4>* {
+  border-right: var(--product-card-border-width) solid var(--color-primary);
+  border-bottom: var(--product-card-border-width) solid var(--color-primary);
+  height: 344px;
+}
+
+.c14 {
+  height: 1px;
+}
+
+<div
+    class="c0"
+  >
+    <h1
+      class="sr-only"
+    >
+      Products list
+    </h1>
+    <form
+      aria-label="Search products"
+      class="c1"
+      role="search"
+      style="width: 100%;"
+    >
+      <label
+        class="sr-only"
+        for="search"
+      >
+        Search
+      </label>
+      <div
+        class="c2"
+      >
+        <input
+          class="c3"
+          id="search"
+          placeholder="Search for a smartphone..."
+          type="text"
+          value=""
+        />
+      </div>
+    </form>
+    <div
+      class="c4 product--card-list"
+    >
+      <article
+        aria-labelledby="product-SMG-S24U"
+        class="c5 c6"
+      >
+        <a
+          aria-label="View details of Galaxy S24 Ultra"
+          class="c7"
+          href="/products/SMG-S24U"
+        >
+          <div
+            class="c8"
+          >
+            <img
+              alt="Picture of Galaxy S24 Ultra"
+              class="c9"
+              data-nimg="1"
+              decoding="async"
+              height="257"
+              loading="lazy"
+              src="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=640&q=75"
+              srcset="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=384&q=75 1x, /_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=640&q=75 2x"
+              style="color: transparent;"
+              width="312"
+            />
+          </div>
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              Samsung
+            </span>
+            <h2
+              class="c12"
+              id="product-SMG-S24U"
+              tabindex="-1"
+            >
+              Galaxy S24 Ultra
+            </h2>
+            <span
+              class="c13"
+            >
+              1329 EUR
+            </span>
+          </div>
+        </a>
+      </article>
+      <article
+        aria-labelledby="product-SMG-A25"
+        class="c5 c6"
+      >
+        <a
+          aria-label="View details of Galaxy A25 5G"
+          class="c7"
+          href="/products/SMG-A25"
+        >
+          <div
+            class="c8"
+          >
+            <img
+              alt="Picture of Galaxy A25 5G"
+              class="c9"
+              data-nimg="1"
+              decoding="async"
+              height="257"
+              loading="lazy"
+              src="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=640&q=75"
+              srcset="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=384&q=75 1x, /_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=640&q=75 2x"
+              style="color: transparent;"
+              width="312"
+            />
+          </div>
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              Samsung
+            </span>
+            <h2
+              class="c12"
+              id="product-SMG-A25"
+              tabindex="-1"
+            >
+              Galaxy A25 5G
+            </h2>
+            <span
+              class="c13"
+            >
+              239 EUR
+            </span>
+          </div>
+        </a>
+      </article>
+    </div>
+    <div
+      aria-hidden="true"
+      class="c14"
+      data-testid="infinite-scroll-sentinel"
+      role="presentation"
+    />
+  </div>
+</DocumentFragment>
+`;

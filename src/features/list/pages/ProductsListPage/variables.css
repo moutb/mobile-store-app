@@ -1,0 +1,4 @@
+.product--card-list {
+  --product-card-border-width: 0.5px;
+  --product-card-border-color: var(--color-primary);
+}
