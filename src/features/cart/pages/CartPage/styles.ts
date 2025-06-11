@@ -31,12 +31,4 @@ export const CartItemsContainer = styled.div`
     padding-bottom: var(--spacing-6);
     flex: 1;
     flex-flow: column nowrap;
-
-    & > * {
-        border-bottom: 0.5px solid var(--color-primary);
-    }
-    & > *:nth-last-child(2),
-    & > *:last-child {
-        border-bottom: none;
-    }
 `;
