@@ -1,6 +1,5 @@
 'use client';
 
-import { ProductListItem } from '@/types/product';
 import {
     Brand,
     Card,
@@ -11,10 +10,15 @@ import {
     ProductImage,
     ProductLink,
 } from './styles';
+import { ProductCardProps } from '../../types';
+import './variables.css';
 
-export default function ProductCard({ product }: { product: ProductListItem }) {
+export default function ProductCard({ product, className }: ProductCardProps) {
     return (
-        <Card aria-labelledby={`product-${product.id}`}>
+        <Card
+            className={`product--card-item${className ? '  ' + className : ''}`}
+            aria-labelledby={`product-${product.id}`}
+        >
             <ProductLink
                 href={`/products/${product.id}`}
                 aria-label={`View details of ${product.name}`}
@@ -23,8 +27,9 @@ export default function ProductCard({ product }: { product: ProductListItem }) {
                     <ProductImage
                         src={product.imageUrl}
                         alt={`Picture of ${product.name}`}
-                        width={312}
-                        height={257}
+                        width={240}
+                        height={240}
+                        draggable={false}
                     />
                 </ImageWrapper>
                 <Info>

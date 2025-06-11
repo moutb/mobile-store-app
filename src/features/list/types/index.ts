@@ -6,3 +6,8 @@ export type ProductListPageProps = {
     pageSize: number;
     debounceDelay: number;
 };
+
+export type ProductCardProps = {
+    product: ProductListItem;
+    className?: string;
+};

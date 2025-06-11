@@ -2,18 +2,21 @@ import styled from 'styled-components';
 
 export const ListWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(344px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(var(--product-card-width), 1fr)
+    );
     width: 100%;
+    margin-top: var(--spacing-4);
 
-    border-left: var(--product-card-border-width) solid var(--color-primary);
-    border-top: var(--product-card-border-width) solid var(--color-primary);
     & > * {
-        border-right: var(--product-card-border-width) solid
-            var(--color-primary);
-        border-bottom: var(--product-card-border-width) solid
-            var(--color-primary);
+        border: var(--product-card-border-width) solid var(--color-primary);
         height: 344px;
     }
+
+    --product-card-border-width: 1px;
+    --product-card-border-color: var(--color-secondary);
+    --product-card-width: 344px;
 `;
 
 export const Sentinel = styled.div`

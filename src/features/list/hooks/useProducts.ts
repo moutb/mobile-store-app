@@ -39,8 +39,9 @@ export const useProducts = (
                 response.list.length < limit ||
                 products.length === newList.length;
             setHasMore(!isLastPage);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
-            console.error('Error fetching products', error);
+            // console.error('Error fetching products', error);
         } finally {
             setIsLoading(false);
         }

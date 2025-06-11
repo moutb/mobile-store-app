@@ -43,6 +43,9 @@ export const ProductImage = styled(Image)`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    user-drag: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;
 `;
 
 export const ProductLink = styled.a`
@@ -68,22 +71,22 @@ export const Info = styled.div`
 
 export const Brand = styled.span`
     grid-column: 1 / -1;
-    font-size: var(--font-size-xs);
+    font-size: var(--product-card-brand-font-size);
     text-transform: uppercase;
-    font-weight: var(--font-weight-thin);
+    font-weight: var(--product-card-brand-font-weight);
 `;
 
 export const Name = styled.h2`
-    font-size: var(--font-size-md);
+    font-size: var(--product-card-name-font-size);
     text-transform: uppercase;
-    font-weight: var(--font-weight-thin);
-    line-height: var(--font-size-md);
+    font-weight: var(--product-card-name-font-weight);
+    line-height: var(--product-card-name-line-height);
 `;
 
 export const Price = styled.span`
-    font-size: 1rem;
-    font-weight: var(--font-weight-thin);
-    line-height: var(--font-size-md);
+    font-size: var(--product-card-price-font-size);
+    font-weight: var(--product-card-price-font-weight);
+    line-height: var(--product-card-price-line-height);
     align-self: end;
     justify-self: end;
 `;

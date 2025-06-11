@@ -1,0 +1,15 @@
+.product--card-item {
+  --product-card-border-width: 0.5px;
+  --product-card-border-color: var(--color-primary);
+  --product-card-width: 344px;
+
+  --product-card-brand-font-size: var(--font-size-xs);
+  --product-card-brand-font-weight: var(--font-weight-thin);
+  --product-card-name-font-size: var(--font-size-md);
+  --product-card-name-font-weight: var(--font-weight-thin);
+  --product-card-name-line-height: var(--font-size-md);
+
+  --product-card-price-font-size: var(--font-size-md);
+  --product-card-price-font-weight: var(--font-weight-thin);
+  --product-card-price-line-height: var(--font-size-sm);
+}

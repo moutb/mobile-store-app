@@ -93,6 +93,9 @@ exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
   width: 100%;
   height: 100%;
   object-fit: contain;
+  user-drag: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
 }
 
 .c7 {
@@ -118,37 +121,38 @@ exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
 
 .c11 {
   grid-column: 1/-1;
-  font-size: var(--font-size-xs);
+  font-size: var(--product-card-brand-font-size);
   text-transform: uppercase;
-  font-weight: var(--font-weight-thin);
+  font-weight: var(--product-card-brand-font-weight);
 }
 
 .c12 {
-  font-size: var(--font-size-md);
+  font-size: var(--product-card-name-font-size);
   text-transform: uppercase;
-  font-weight: var(--font-weight-thin);
-  line-height: var(--font-size-md);
+  font-weight: var(--product-card-name-font-weight);
+  line-height: var(--product-card-name-line-height);
 }
 
 .c13 {
-  font-size: 1rem;
-  font-weight: var(--font-weight-thin);
-  line-height: var(--font-size-md);
+  font-size: var(--product-card-price-font-size);
+  font-weight: var(--product-card-price-font-weight);
+  line-height: var(--product-card-price-line-height);
   align-self: end;
   justify-self: end;
 }
 
 .c4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(344px,1fr));
+  grid-template-columns: repeat( auto-fit,minmax(var(--product-card-width),1fr) );
   width: 100%;
-  border-left: var(--product-card-border-width) solid var(--color-primary);
-  border-top: var(--product-card-border-width) solid var(--color-primary);
+  margin-top: var(--spacing-4);
+  --product-card-border-width: 1px;
+  --product-card-border-color: var(--color-secondary);
+  --product-card-width: 344px;
 }
 
 .c4>* {
-  border-right: var(--product-card-border-width) solid var(--color-primary);
-  border-bottom: var(--product-card-border-width) solid var(--color-primary);
+  border: var(--product-card-border-width) solid var(--color-primary);
   height: 344px;
 }
 
@@ -189,11 +193,11 @@ exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
       </div>
     </form>
     <div
-      class="c4 product--card-list"
+      class="c4"
     >
       <article
         aria-labelledby="product-SMG-S24U"
-        class="c5 c6"
+        class="c5 c6 product--card-item"
       >
         <a
           aria-label="View details of Galaxy S24 Ultra"
@@ -208,12 +212,13 @@ exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
               class="c9"
               data-nimg="1"
               decoding="async"
-              height="257"
+              draggable="false"
+              height="240"
               loading="lazy"
               src="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=640&q=75"
-              srcset="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=384&q=75 1x, /_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=640&q=75 2x"
+              srcset="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=256&q=75 1x, /_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-S24U-titanium-violet.webp&w=640&q=75 2x"
               style="color: transparent;"
-              width="312"
+              width="240"
             />
           </div>
           <div
@@ -241,7 +246,7 @@ exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
       </article>
       <article
         aria-labelledby="product-SMG-A25"
-        class="c5 c6"
+        class="c5 c6 product--card-item"
       >
         <a
           aria-label="View details of Galaxy A25 5G"
@@ -256,12 +261,13 @@ exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
               class="c9"
               data-nimg="1"
               decoding="async"
-              height="257"
+              draggable="false"
+              height="240"
               loading="lazy"
               src="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=640&q=75"
-              srcset="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=384&q=75 1x, /_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=640&q=75 2x"
+              srcset="/_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=256&q=75 1x, /_next/image?url=http%3A%2F%2Fprueba-tecnica-api-tienda-moviles.onrender.com%2Fimages%2FSMG-A25-negro.webp&w=640&q=75 2x"
               style="color: transparent;"
-              width="312"
+              width="240"
             />
           </div>
           <div
@@ -287,13 +293,13 @@ exports[`<ProductListPage /> snapshot matches snapshot 1`] = `
           </div>
         </a>
       </article>
+      <div
+        aria-hidden="true"
+        class="c14"
+        data-testid="infinite-scroll-sentinel"
+        role="presentation"
+      />
     </div>
-    <div
-      aria-hidden="true"
-      class="c14"
-      data-testid="infinite-scroll-sentinel"
-      role="presentation"
-    />
   </div>
 </DocumentFragment>
 `;

@@ -12,7 +12,6 @@ import { ProductListPageProps } from '../../types';
 import Flexbox from '@/components/Flexbox';
 import { theme } from '@/styles/theme';
 import { ListWrapper, Loading, Sentinel } from './styles';
-import './variables.css';
 
 const ProductListPage: NextPageWithLayout<ProductListPageProps> = ({
     initialPage,
@@ -44,21 +43,21 @@ const ProductListPage: NextPageWithLayout<ProductListPageProps> = ({
             {products.length === 0 && !isLoading && (
                 <p role="alert">No products found.</p>
             )}
-            {products.length > 0 && (
-                <ListWrapper className="product--card-list">
-                    {products.map((product) => (
+            <ListWrapper>
+                {products.length > 0 &&
+                    products.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
-                </ListWrapper>
-            )}
-            {hasMore && (
-                <Sentinel
-                    ref={setRef}
-                    aria-hidden="true"
-                    role="presentation"
-                    data-testid="infinite-scroll-sentinel"
-                />
-            )}
+
+                {hasMore && (
+                    <Sentinel
+                        ref={setRef}
+                        aria-hidden="true"
+                        role="presentation"
+                        data-testid="infinite-scroll-sentinel"
+                    />
+                )}
+            </ListWrapper>
             {isLoading && <Loading role="status">Loading products...</Loading>}
         </Flexbox>
     );
@@ -66,6 +65,13 @@ const ProductListPage: NextPageWithLayout<ProductListPageProps> = ({
 
 ProductListPage.getLayout = (page: React.ReactElement) => {
     return <CartHeaderLayout>{page}</CartHeaderLayout>;
+};
+
+ProductListPage.metadata = () => {
+    return {
+        title: 'Products List',
+        description: 'Browse our collection of products.',
+    };
 };
 
 export default ProductListPage;
