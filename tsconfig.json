@@ -15,7 +15,7 @@
         "incremental": true,
         "paths": {
             "@/*": ["./src/*"],
-            "@mocks/*": ["./src/__tests__/mocks/*"],
+            "@mocks/*": ["./src/__tests__/mocks/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
