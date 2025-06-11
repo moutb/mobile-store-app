@@ -6,8 +6,8 @@ const CartIcon = ({ filled }: CartIconProps) => (
     <StyledImage
         src={`/bag${filled ? '-filled' : ''}.svg`}
         alt="Shopping cart"
-        width={filled ? 24 : 18}
-        height={filled ? 24 : 18}
+        width={filled ? 32 : 24}
+        height={filled ? 32 : 24}
         style={{ display: 'block' }}
     />
 );

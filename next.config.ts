@@ -1,13 +1,18 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-    /* config options here */
     reactStrictMode: true,
     compiler: {
         styledComponents: {
-            ssr: true, // Enable server-side rendering for styled-components
-            displayName: true, // Enable display names for styled-components
+            ssr: true,
+            displayName: true,
         },
+    },
+    images: {
+        domains: (process.env['ALLOWED_IMAGES_DOMAINS'] ?? '')
+            .split(',')
+            .map((domain) => domain.trim())
+            .filter((domain) => domain.length > 0),
     },
 };
 

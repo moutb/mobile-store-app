@@ -29,12 +29,18 @@ exports[`<Header /> matches snapshot 1`] = `
   padding-bottom: var(--spacing-4);
 }
 
+.c1.header--bottom-bordered {
+  border-bottom: 1px solid var(--color-primary);
+}
+
 .c1>nav {
   height: 100%;
 }
 
 .c3 {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .c4 {
@@ -102,9 +108,12 @@ exports[`<Header /> matches snapshot 1`] = `
         <img
           alt="Logo"
           class="c3"
-          height="24"
+          data-nimg="1"
+          decoding="async"
+          height="48"
           src="/mbst.svg"
-          width="74"
+          style="color: transparent;"
+          width="148"
         />
       </a>
       <a
@@ -115,10 +124,13 @@ exports[`<Header /> matches snapshot 1`] = `
         <img
           alt="Shopping cart"
           class="c5"
-          height="18"
+          data-nimg="1"
+          decoding="async"
+          height="24"
+          loading="lazy"
           src="/bag.svg"
-          style="display: block;"
-          width="18"
+          style="color: transparent; display: block;"
+          width="24"
         />
         <span
           class="c6"

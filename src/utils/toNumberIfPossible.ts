@@ -1,3 +1,9 @@
+/**
+ * Converts a string to a number if possible.
+ * Returns undefined if the value is undefined or not a valid number.
+ * @param value - The string to convert.
+ * @returns The number value or undefined.
+ */
 export function toNumberIfPossible(
     value: string | undefined,
 ): number | undefined {

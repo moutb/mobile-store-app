@@ -5,21 +5,34 @@ import Flexbox from '../Flexbox';
 import Container from '../Container';
 import Image from 'next/image';
 import CarIcon from './CartIcon';
+import { HeaderProps } from './types';
 
-const Header = () => {
+const Header = ({ showCart = false, clear = false }: HeaderProps) => {
     const { state } = useCart();
     const totalItems = state.products.length;
 
     return (
-        <HeaderContainer as="header" role="banner">
+        <HeaderContainer
+            as="header"
+            role="banner"
+            className={clear ? '' : 'header--bottom-bordered'}
+        >
             <Flexbox as="nav" aria-label="Main navigation">
                 <Link href="/" aria-label="Navigate to home page">
-                    <Logo src="/mbst.svg" alt="Logo" width={74} height={24} />
+                    <Logo
+                        src="/mbst.svg"
+                        alt="Logo"
+                        width={148}
+                        height={48}
+                        priority
+                    />
                 </Link>
-                <Cart href="/cart" aria-label="Navigate to shopping cart">
-                    <CarIcon filled={totalItems > 0} />
-                    <CartNumber>{totalItems}</CartNumber>
-                </Cart>
+                {showCart && (
+                    <Cart href="/cart" aria-label="Navigate to shopping cart">
+                        <CarIcon filled={totalItems > 0} />
+                        <CartNumber>{totalItems}</CartNumber>
+                    </Cart>
+                )}
             </Flexbox>
         </HeaderContainer>
     );
@@ -31,6 +44,11 @@ const HeaderContainer = styled(Container)`
     height: var(--header-height);
     padding-top: var(--spacing-4);
     padding-bottom: var(--spacing-4);
+
+    &.header--bottom-bordered {
+        border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+    }
+
     & > nav {
         height: 100%;
     }
@@ -38,6 +56,8 @@ const HeaderContainer = styled(Container)`
 
 const Logo = styled(Image)`
     display: block;
+    width: 100%;
+    height: auto;
 `;
 
 const Cart = styled(Link)`

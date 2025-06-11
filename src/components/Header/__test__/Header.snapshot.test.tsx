@@ -3,17 +3,17 @@ import { render } from '@testing-library/react';
 import Header from '../index';
 import { CartProvider } from '@/features/cart/context/CartContext';
 import '@testing-library/jest-dom';
-import type { ImageProps } from 'next/image';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
+import '@/__test__/mocks/next-image';
 
-jest.mock('next/image', () => ({
-    __esModule: true,
-    default: (props: ImageProps) => {
-        return (
-            <img {...(props as React.ImgHTMLAttributes<HTMLImageElement>)} />
-        );
-    },
+jest.mock('next/navigation', () => ({
+    useRouter: () => ({
+        push: jest.fn(),
+        back: jest.fn(),
+    }),
+    usePathname: () => '/',
+    useSearchParams: () => new URLSearchParams(),
 }));
 
 describe('<Header />', () => {
@@ -21,7 +21,7 @@ describe('<Header />', () => {
         const { asFragment } = render(
             <ThemeProvider theme={theme}>
                 <CartProvider initialState={{ products: [] }}>
-                    <Header />
+                    <Header showCart clear />
                 </CartProvider>
             </ThemeProvider>,
         );

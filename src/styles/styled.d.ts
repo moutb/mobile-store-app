@@ -11,6 +11,7 @@ declare module 'styled-components' {
             header: string;
             white: string;
             danger: string;
+            focus: string;
         };
         spacing: (factor: number) => string;
         typography: {

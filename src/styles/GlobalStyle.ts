@@ -40,4 +40,25 @@ export const GlobalStyle = createGlobalStyle`
         border: 0;
     }
 
+
+    .custom-scrollbar {
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-primary) var(--color-secondary);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 12px;
+        height: 0.5px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background-color: var(--color-secondary);
+        border-radius: 2px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary);
+        border-radius: 2px;
+    }
 `;

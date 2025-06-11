@@ -6,7 +6,7 @@ export type StyleProps = {
     align?: React.CSSProperties['alignItems'];
     justify?: React.CSSProperties['justifyContent'];
     gap?: string | number;
-};
+} & React.CSSProperties;
 
 export type FlexboxProps<T extends keyof React.JSX.IntrinsicElements> =
     StyleProps & {
@@ -17,7 +17,7 @@ export type FlexboxProps<T extends keyof React.JSX.IntrinsicElements> =
         lg?: StyleProps;
         xl?: StyleProps;
         as?: T;
-    } & React.JSX.IntrinsicElements[T];
+    } & React.JSX.IntrinsicElements[T] & { style?: React.CSSProperties };
 
 export type FlexboxComponent = <
     T extends keyof React.JSX.IntrinsicElements = 'div',

@@ -5,10 +5,11 @@
   /*--color-background: #e0e0e0;*/
   --color-background: #ffffff;
   --color-text: #1a1a1a;
-  --color-light: #999;
+  --color-light: #ccc;
   --color-header: #1e1e1e;
   --color-white: #ffffff;
   --color-danger: #ff4d4f;
+  --color-focus: #2563eb;
 
   /* Spacing */
   --spacing-1: 4px;
@@ -38,5 +39,4 @@
 
   /* Header */
   --header-height: 80px;
-
 }

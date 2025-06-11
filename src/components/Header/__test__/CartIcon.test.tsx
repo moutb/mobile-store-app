@@ -11,8 +11,8 @@ describe('CartIcon', () => {
             'src',
             expect.stringContaining('/bag.svg'),
         );
-        expect(image).toHaveAttribute('width', '18');
-        expect(image).toHaveAttribute('height', '18');
+        expect(image).toHaveAttribute('width', '24');
+        expect(image).toHaveAttribute('height', '24');
     });
 
     it('renders filled icon when prop is true', () => {
@@ -22,8 +22,8 @@ describe('CartIcon', () => {
             'src',
             expect.stringContaining('/bag-filled.svg'),
         );
-        expect(image).toHaveAttribute('width', '24');
-        expect(image).toHaveAttribute('height', '24');
+        expect(image).toHaveAttribute('width', '32');
+        expect(image).toHaveAttribute('height', '32');
     });
 
     it('passes accessibility checks', async () => {

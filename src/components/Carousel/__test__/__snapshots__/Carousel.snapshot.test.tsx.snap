@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel Snapshot Tests renders correctly and matches snapshot 1`] = `
+.c0 {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.c1 {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  width: 100%;
+  user-select: none;
+}
+
+.c2 {
+  flex: 0 0 calc(100% / 1);
+  scroll-snap-align: start;
+}
+
+.c3 {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-secondary);
+  margin-top: var(--spacing-6);
+  position: relative;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.c4 {
+  position: absolute;
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: left 0.2s ease;
+}
+
+<div>
+  <div
+    aria-roledescription="carousel"
+    class="c0"
+    role="region"
+  >
+    <div
+      class="c1"
+      data-testid="carousel-track"
+      role="group"
+    >
+      <div
+        class="c2 carousel--item"
+      >
+        <div>
+          Item 1
+        </div>
+      </div>
+      <div
+        class="c2 carousel--item"
+      >
+        <div>
+          Item 2
+        </div>
+      </div>
+      <div
+        class="c2 carousel--item"
+      >
+        <div>
+          Item 3
+        </div>
+      </div>
+    </div>
+    <div
+      class="c3"
+      data-testid="carousel-progress"
+    >
+      <div
+        class="c4"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;

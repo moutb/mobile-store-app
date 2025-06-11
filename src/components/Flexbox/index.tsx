@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { FlexboxComponent, FlexboxProps, StyleProps } from './types';
 import baseShouldForwardProp from '@styled-system/should-forward-prop';
-import { media } from '@/utils/media';
+import { media } from '@/styles/media';
 
 const getFlexStyles = (props: StyleProps) => css`
     flex-direction: ${props.column ? 'column' : 'row'};

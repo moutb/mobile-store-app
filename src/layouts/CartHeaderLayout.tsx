@@ -10,7 +10,7 @@ type CartHeaderLayoutProps = {
 const CartHeaderLayout: React.FC<CartHeaderLayoutProps> = ({ children }) => {
     return (
         <>
-            <Header />
+            <Header showCart clear />
             <MainContainer>{children}</MainContainer>
         </>
     );

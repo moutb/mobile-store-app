@@ -6,9 +6,11 @@ export const theme: DefaultTheme = {
         secondary: 'var(--color-secondary)',
         background: 'var(--color-background)',
         text: 'var(--color-text)',
+        light: 'var(--color-light)',
         header: 'var(--color-header)',
         white: 'var(--color-white)',
         danger: 'var(--color-danger)',
+        focus: 'var(--color-focus)',
     },
     spacing: (factor: number) => `var(--spacing-${factor})`,
     typography: {
