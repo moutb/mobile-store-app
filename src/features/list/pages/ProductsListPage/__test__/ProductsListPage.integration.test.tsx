@@ -6,11 +6,7 @@ import {
     waitFor,
     act,
 } from '@testing-library/react';
-import {
-    mockPush,
-    mockRouter,
-    mockSearchParams,
-} from '@/__test__/mocks/next-navigation';
+import { mockPush, mockSearchParams } from '@/__test__/mocks/next-navigation';
 import ProductListPage from '..';
 import { server } from '@/__test__/mocks/server';
 import { rest } from 'msw';

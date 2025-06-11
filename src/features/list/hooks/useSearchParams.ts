@@ -2,7 +2,7 @@ import {
     useRouter,
     useSearchParams as nextUseSearchParams,
 } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const SEARCH_PARAM_KEY = 'q';
 

@@ -54,7 +54,7 @@ export const useProducts = (
         setProducts(isInitialSearch ? initialPage.list : []);
         setPage(isInitialSearch ? 2 : 1);
         setHasMore(!initialSearch || initialPage.list.length === limit);
-    }, [search, initialPage.list]);
+    }, [search, initialPage.list, initialSearch, limit]);
 
     return { products, fetchProducts, isLoading, hasMore };
 };

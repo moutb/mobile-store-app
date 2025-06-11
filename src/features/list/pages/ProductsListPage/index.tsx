@@ -36,6 +36,7 @@ const ProductListPage: NextPageWithLayout<ProductListPageProps> = ({
 
     useEffect(() => {
         refreshQueryParams();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debouncedSearch]);
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
