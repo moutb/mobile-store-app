@@ -1,0 +1,5 @@
+.cart--product-item {
+  --product-image-wrapper-height: 160px;
+  --product-image-wrapper-md-width: 240px;
+  --product-info-max-height: 160px;
+}

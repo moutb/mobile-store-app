@@ -4,7 +4,6 @@ export type CartProduct = {
     id: string;
     brand: string;
     name: string;
-    totalPrice: number;
     color: ProductColorOption;
     storage: ProductStorageOption;
 };
