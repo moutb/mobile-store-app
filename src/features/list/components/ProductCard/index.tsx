@@ -11,7 +11,6 @@ import {
     ProductLink,
 } from './styles';
 import { ProductCardProps } from '../../types';
-import './variables.css';
 
 export default function ProductCard({ product, className }: ProductCardProps) {
     return (

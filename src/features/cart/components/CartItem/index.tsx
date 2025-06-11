@@ -1,5 +1,4 @@
 'use client';
-
 import { useCart } from '../../context/CartContext';
 import { CartProduct } from '../../types';
 import {
@@ -13,7 +12,6 @@ import {
     RemoveButton,
     Spacer,
 } from './styles';
-import './variables.css';
 
 const CartItem = ({ product }: { product: CartProduct }) => {
     const { removeFromCart } = useCart();

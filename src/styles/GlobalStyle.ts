@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import './variables.css';
+import { variables } from './variables';
 
 export const GlobalStyle = createGlobalStyle`
     *, *::before, *::after {
@@ -61,4 +61,6 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--color-primary);
         border-radius: 2px;
     }
+
+    ${variables}
 `;

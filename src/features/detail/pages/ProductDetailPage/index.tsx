@@ -22,7 +22,6 @@ import { useCart } from '@/features/cart/context/CartContext';
 import ProductCard from '@/features/list/components/ProductCard';
 import NavBar from '@/components/NavBar';
 import Carousel from '@/components/Carousel';
-import './variables.css';
 
 const ProductDetailPage: NextPageWithLayout<ProductDetailPageProps> = ({
     product,
