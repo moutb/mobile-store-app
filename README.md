@@ -154,11 +154,21 @@ Si tienes problemas al hacer commit, revisa los mensajes de error de Husky y cor
 
 ## 💬 Comentarios
 
-- La feature cart no está testeada con jest. A cambio he incluido el testing de esta parte en el e2e (`cart-flow.spec.ts`).
+- Las features cart y detail no están testeadas con jest. A cambio he incluido el testing de estas partes en el e2e (`cart-flow.spec.ts`).
 - Puse todo el idioma de la aplicación en inglés. No hablaba de soporte multiidioma así que no introduje ninguna librería de etiquetado
 - Para el listado puse un infinite-scroll pero la api no devolvía el total de elementos por lo que el número de resultados no lo he incluido debajo de la barra de búsqueda.
 - Las imágenes vienen en distintos tamaños y con distinto padding, he intentado normalizarlas al máximo pero habría que tratar de unificarlas con `object-fit: contain`, para que se vienen igual.
 - En el carrito no he añadido lógica al botón "Pay".
+- En la vista de detalle, en la sección `SIMILAR ITEMS`, el Carousel funciona mediante eventos drag (aunque sin iconos next ni previous no parece muy intuitivo).
+
+---
+
+## 🐞 Problemas Conocidos
+
+- Si al ejecutar los tests 'e2e' hay algún error se debe hacer previamente un `npm install playwright` y seguidamente lanzar el proyecto `npm run dev` antes de volver a ejecutar `npm run test:e2e`.
+- Al instalar el proyecto y lanzarlos por primera vez puede existir algún problema con Prettier debido al CRLF, para solventarlo bastará con ejecutar `npm run format` antes de hacer un build.
+- Si las variables de entorno no están correctamente configuradas, la app no arrancará.
+- El despliegue en Docker requiere que el archivo `.env.local` esté presente y correctamente configurado.
 
 ---
 
