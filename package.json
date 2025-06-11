@@ -10,6 +10,7 @@
         "lint": "next lint",
         "lint:fix": "next lint --fix",
         "test": "jest",
+        "test:e2e": "playwright test",
         "format": "prettier --write ."
     },
     "dependencies": {
@@ -28,6 +29,7 @@
         "@eslint/eslintrc": "^3",
         "@eslint/js": "^9.27.0",
         "@mswjs/interceptors": "^0.38.7",
+        "@playwright/test": "^1.53.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^16.3.0",
         "@testing-library/user-event": "^14.6.1",
