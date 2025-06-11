@@ -7,6 +7,7 @@ export const useProducts = (
     search: string = '',
     limit: number,
     initialPage: Page<ProductListItem>,
+    initialSearch: string = '',
 ) => {
     const [products, setProducts] = useState<ProductListItem[]>(
         initialPage.list,
@@ -49,9 +50,10 @@ export const useProducts = (
 
     useEffect(() => {
         // Reset values as the first page is already loaded
-        setProducts(search === '' ? initialPage.list : []);
-        setPage(search === '' ? 2 : 1);
-        setHasMore(true);
+        const isInitialSearch = search === initialSearch;
+        setProducts(isInitialSearch ? initialPage.list : []);
+        setPage(isInitialSearch ? 2 : 1);
+        setHasMore(!initialSearch || initialPage.list.length === limit);
     }, [search, initialPage.list]);
 
     return { products, fetchProducts, isLoading, hasMore };

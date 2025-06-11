@@ -3,6 +3,7 @@ import { ProductListItem } from '@/types/product';
 
 export type ProductListPageProps = {
     initialPage: Page<ProductListItem>;
+    initialSearch: string;
     pageSize: number;
     debounceDelay: number;
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect } from 'react';
 import SearchBar from '@/components/SearchBar';
 import { useProducts } from '../../hooks/useProducts';
 import { NextPageWithLayout } from '@/types/pages';
@@ -12,24 +12,38 @@ import { ProductListPageProps } from '../../types';
 import Flexbox from '@/components/Flexbox';
 import { theme } from '@/styles/theme';
 import { ListWrapper, Loading, Sentinel } from './styles';
+import useSearchParams from '../../hooks/useSearchParams';
 
 const ProductListPage: NextPageWithLayout<ProductListPageProps> = ({
     initialPage,
+    initialSearch,
     pageSize,
     debounceDelay,
 }) => {
-    const [search, setSearch] = useState('');
+    const { search, setSearch, refreshQueryParams } = useSearchParams();
     const debouncedSearch = useDebounce(search, debounceDelay);
     const { products, fetchProducts, isLoading, hasMore } = useProducts(
         debouncedSearch,
         pageSize,
         initialPage,
+        initialSearch,
     );
     const { setRef } = useInfiniteScroll({
         fetchMore: fetchProducts,
         hasMore,
         loading: isLoading,
     });
+
+    useEffect(() => {
+        refreshQueryParams();
+    }, [debouncedSearch]);
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            // preventing for doing anything because debounce will update the search value
+        }
+    };
 
     return (
         <Flexbox column align="flex-start" gap={theme.spacing(3)}>
@@ -38,6 +52,7 @@ const ProductListPage: NextPageWithLayout<ProductListPageProps> = ({
                 disabled={isLoading}
                 value={search}
                 onChange={setSearch}
+                onKeyDown={handleKeyDown}
             />
 
             {products.length === 0 && !isLoading && (

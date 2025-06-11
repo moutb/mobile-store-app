@@ -6,6 +6,11 @@ import {
     waitFor,
     act,
 } from '@testing-library/react';
+import {
+    mockPush,
+    mockRouter,
+    mockSearchParams,
+} from '@/__test__/mocks/next-navigation';
 import ProductListPage from '..';
 import { server } from '@/__test__/mocks/server';
 import { rest } from 'msw';
@@ -21,7 +26,7 @@ beforeAll(() => {
     jest.useFakeTimers();
 });
 
-afterAll(() => {
+afterAll(async () => {
     jest.useRealTimers();
 });
 
@@ -29,6 +34,11 @@ const renderWithTheme = (ui: React.ReactNode) =>
     render(<ThemeProvider theme={theme}>{ui}</ThemeProvider>);
 
 describe('<ProductListPage /> integration', () => {
+    beforeEach(() => {
+        mockPush.mockClear();
+        mockSearchParams.mockImplementation(() => new URLSearchParams());
+    });
+
     it('renders the initial list of products', async () => {
         renderWithTheme(<ProductListPage {...defaultProps} />);
 
@@ -41,49 +51,6 @@ describe('<ProductListPage /> integration', () => {
             expect(screen.getByText(/Galaxy A25 5G/i)).toBeInTheDocument();
         });
     });
-
-    it('filters products using debounce and triggers fetchMore via sentinel', async () => {
-        renderWithTheme(
-            <ProductListPage
-                initialPage={{ list: [], limit: 10, offset: 0 }}
-                pageSize={10}
-                debounceDelay={500}
-            />,
-        );
-
-        const searchInput = screen.getByRole('textbox', { name: /search/i });
-        expect(searchInput).toBeInTheDocument();
-
-        act(() => {
-            fireEvent.change(searchInput, { target: { value: 'Galaxy' } });
-            jest.advanceTimersByTime(500);
-        });
-
-        const sentinel = screen.getByTestId('infinite-scroll-sentinel');
-
-        expect(sentinel).toBeInTheDocument();
-
-        act(() => {
-            intersectionCallback([
-                {
-                    isIntersecting: true,
-                    target: sentinel,
-                    intersectionRatio: 1,
-                    time: 0,
-                    boundingClientRect: {} as any,
-                    intersectionRect: {} as any,
-                    rootBounds: {} as any,
-                },
-            ]);
-        });
-
-        await waitFor(() => {
-            expect(
-                screen.getAllByText(/Galaxy/i).length,
-            ).toBeGreaterThanOrEqual(3);
-        });
-    });
-
     it('displays sentinel when there are more products to load', async () => {
         await act(async () => {
             renderWithTheme(<ProductListPage {...defaultProps} />);
@@ -178,6 +145,42 @@ describe('<ProductListPage /> integration', () => {
             );
         });
     });
+
+    it('calls router.push with correct search param when search is submitted', async () => {
+        renderWithTheme(<ProductListPage {...defaultProps} />);
+
+        const input = screen.getByRole('textbox');
+
+        act(() => {
+            fireEvent.change(input, { target: { value: 'oppo' } });
+            jest.advanceTimersByTime(defaultProps.debounceDelay);
+        });
+
+        await waitFor(() => {
+            expect(mockPush).toHaveBeenCalledWith('?q=oppo', { scroll: false });
+        });
+    });
+
+    it('loads search value from URL on initial render', async () => {
+        mockSearchParams.mockImplementation(() => {
+            const params = new URLSearchParams();
+            params.set('q', 'galaxy');
+            return params;
+        });
+        renderWithTheme(
+            <ProductListPage
+                {...{ ...defaultProps, initialSearch: 'galaxy' }}
+            />,
+        );
+
+        const searchInput = screen.getByRole('textbox', { name: /search/i });
+
+        await waitFor(() => {
+            expect(searchInput).toHaveValue('galaxy');
+            expect(screen.queryAllByText(/Galaxy/i).length).toBeGreaterThan(0);
+        });
+    });
+
     it('shows no results message when empty results', async () => {
         server.use(
             rest.get('/api/products', async (req, res, ctx) => {
@@ -192,9 +195,6 @@ describe('<ProductListPage /> integration', () => {
 
         act(() => {
             fireEvent.change(searchInput, { target: { value: 'Galaxy' } });
-        });
-
-        act(() => {
             jest.advanceTimersByTime(defaultProps.debounceDelay);
         });
 

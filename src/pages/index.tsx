@@ -11,8 +11,12 @@ const {
 
 export const getServerSideProps: GetServerSideProps<
     ProductListPageProps
-> = async () => {
-    const initialPage = await listProducts({ limit: pageSize });
+> = async (context) => {
+    const query = context.query.q || '';
+    const initialPage = await listProducts({
+        search: query ? (query as string) : undefined,
+        limit: pageSize,
+    });
 
     logger.debug(
         initialPage,
@@ -22,6 +26,7 @@ export const getServerSideProps: GetServerSideProps<
     return {
         props: {
             initialPage,
+            initialSearch: query ? (query as string) : '',
             pageSize,
             debounceDelay,
         },

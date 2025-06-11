@@ -1,5 +1,6 @@
 // __tests__/ProductListPage.snapshot.test.tsx
 import { render } from '@testing-library/react';
+import '@/__test__/mocks/next-navigation';
 import ProductListPage from '..';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';

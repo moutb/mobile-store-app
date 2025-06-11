@@ -12,6 +12,7 @@ const defaultProps: ProductListPageProps = {
         offset: 0,
         limit: list.length,
     },
+    initialSearch: '',
     pageSize: list.length,
     debounceDelay: 500,
 };

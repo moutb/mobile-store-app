@@ -6,6 +6,7 @@ import { SearchBarProps } from './types';
 export default function SearchBar({
     value,
     onChange,
+    onKeyDown,
     disabled = false,
 }: SearchBarProps) {
     return (
@@ -22,8 +23,10 @@ export default function SearchBar({
                 <Input
                     id="search"
                     type="text"
+                    name="search"
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
+                    onKeyDown={(e) => onKeyDown && onKeyDown(e)}
                     placeholder="Search for a smartphone..."
                     disabled={disabled}
                 />

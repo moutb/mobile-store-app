@@ -1,6 +1,7 @@
 // __tests__/ProductListPage.accessibility.test.tsx
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import '@/__test__/mocks/next-navigation';
 import ProductListPage from '..';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
