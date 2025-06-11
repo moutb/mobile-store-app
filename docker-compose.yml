@@ -2,9 +2,11 @@ version: '3.8'
 services:
     web:
         build: .
+        image: mobile-store-app
         ports:
             - '3000:3000'
         volumes:
             - .:/app
-        environment:
-            - NODE_ENV=production
+        env_file:
+            - .env.local
+        restart: unless-stopped
