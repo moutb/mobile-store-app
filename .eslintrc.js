@@ -9,5 +9,7 @@ module.exports = {
         'plugin:prettier/recommended',
         'plugin:jsx-a11y/recommended',
     ],
-    rules: {},
+    rules: {
+        'no-console': 'error',
+    },
 };
